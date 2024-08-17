@@ -1,2 +1,4 @@
 # smarttechnick
-Smarttechnick - Home Assistant 
+Smarttechnick - Home Assistant Code Snippets
+
+https://www.instagram.com/smarttechnick/
