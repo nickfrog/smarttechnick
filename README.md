@@ -1,0 +1,2 @@
+# smarttechnick
+Smarttechnick - Home Assistant 
