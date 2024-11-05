@@ -1,1 +1,29 @@
 #code-snippets.yaml
+
+#KlingelPush
+
+- id: doorbell
+  alias: doorbell
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.klingel_besucher_2
+      to: "on"
+  action:
+  - service: camera.snapshot
+    target:
+      entity_id: camera.klingel_fliessend_2
+    data:
+      filename: '/config/www/videos/klingel.jpg'
+  - delay: "00:00:02"
+  - service: notify.ios_push
+    data:
+      message: Es hat geklingelt
+      title: Ding Dong!
+      data:
+        image: "/local/videos/klingel.jpg"
+        actions:
+        - action: "URI" # Must be set to URI if you plan to use a URI
+          title: "Öffnen"
+          url: fb1675493782511558:// 
+          activationMode: background
